@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* Comeeçamos resetando as tag abaixo  */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  color: #222222;
+}
+/* Com isso tiramos todas as bolinhas que fica no item das listas */
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* Quando criamos essa função deixamos tudo que tem a tag img com display block e com o max width de 100% tornamos elas responsivas  
+Lembrando que tem que ser max-width!!!
+*/
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*  Super-Info */
+
+.superinfo-bg {
+  background: #122ab2;
+  color: white;
+}
+.superinfo {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  /* Utilizamos o flex-wrap: wrap para que ele quebre pra próxima linha */
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+/*  esesa margem é para que os elementos não fiquem mais grudados na ponta do container, fica melhor visualmente** */
+.superinfo p,
+.superinfo a {
+  margin: 0 10px 10px 10px;
+}
+.superinfo a {
+  color: white;
+}
+
+/* Menu */
+
+/* esse menu foi apenas para estabelecer a cor no fundo de ponta a ponta */
+.menu-bg {
+  background: #2c70ff;
+}
+/* O menu vai sere o container geral que vai pegar os itens 
+No menu que vamos inserir display flex porque eu quero que a div e a nav sejam flex itens(os childs))
+*/
+.menu {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* colocamos o space between para alinhar a marca do nosso site de um lado e a navegação do outro */
+  justify-content: space-between;
+  /* colocamos o aling-item para que eles fiquem sempre alinhados ao centro */
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+}
+
+.menu-logo a {
+  font-size: 2.25em;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.menu-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*  por padrão o a é um display inline, mas como queremos influenciar no padding dele, para que a área de contato seja aumentada, mudamos isto e colocamos nosso padding  */
+.menu-nav a {
+  font-size: 1.25em;
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+}
+/* o hover é uma função que quando passarmos o mouse em cima ele irá mudar a cor  */
+.menu-nav a:hover {
+  color: #122ab2;
+}
+/* introdução */
+
+.introducao {
+  font-size: 3em;
+  line-height: 1;
+  max-width: 960px;
+  /* posso colocar 60px no margin, é caso eu queira pintar apenas a área e não o container todo, coloco os 60px na margin e tiro do padding. 
+  Padding = Interno
+  margin = Externo
+  */
+  margin: 0 auto;
+  /* padding pra cima e para baixo de 60px e 10px pra esquerda e pra direita  */
+  padding: 60px 10px;
+}
+
+/* Sobre */
+/* aplicamos display flex no nosso sobre porque ele agrupa 3 elementos 
+Os flex itens são os filhos e não as divs que estão dentro
+*/
+.sobre {
+  border-top: 2px solid #2c70ff;
+  border-bottom: 2px solid #2c70ff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* para que quando a página ficar muito pequena a imageme não diminua muito, vamos definir um flex-basis para que so quebre até o mínimo */
+}
+
+.sobre-info {
+  /* flex-grow de 2 shrink de 1 e flex-basis de 300px */
+  flex: 2 1 300px;
+  margin: 0 10px;
+}
+
+.sobre-info h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.sobre-info p {
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  color: #7c7c7c;
+}
+/* aqui não estou falando direto com a img, estou falando com a div que contém a imagem. */
+.sobre-img {
+  flex: 1 1 160px;
+  margin: 0 10px;
+}
+
+/*  Produtos */
+
+.produtos {
+  max-width: 960px;
+  margin: 60px auto;
+}
+
+.produtos h1 {
+  font-size: 3em;
+  margin: 0 10px 60px 10px;
+}
+
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.produtos-item {
+  /* Lembrando, o 175 é o flex-basis, ele não vai permitir que a imagem diminua mais do que o que foi definido, caso não caiba ela irá quebrar a linha */
+  flex: 1 1 175px;
+  /* margin para separar os itens */
+  margin: 10px;
+}
+
+.produtos-item h2 {
+  font-size: 3em;
+  color: #a4a4a4;
+  background: #f7f7f7;
+  padding: 60px 20px;
+}
+
+.purple {
+  border-top: 8px solid #ae81ff;
+}
+.pink {
+  border-top: 8px solid #f9265e;
+}
+.blue {
+  border-top: 8px solid #66d9eb;
+}
+
+/* Planos */
+
+.preco {
+  background: #f7f7f7;
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.preco-item {
+  /* Sempre deefinir o min-width com menos de 260px, porque esse é o valor mínimo de um mobile mais ou menos  OU posso definir o flex-basis no flex
+    min-width: 260px;
+    */
+  flex: 1 1 260px;
+  border: 4px solid white;
+  /* padding é para separar os conteudos da borda  */
+  padding: 20px;
+  margin: 10px;
+}
+
+.preco-item h2 {
+  font-size: 3em;
+  color: #a4a4a4;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.preco-item span {
+  max-width: 300px;
+  margin: 20px auto;
+  /* por padrão span é display inline, então as configurações não estariam sendo aplicadas, com display block funciona. */
+  display: block;
+  font-size: 3em;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0 5px 0;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+}
+
+/* Quando tivermos uma tag dentro de outra, como é no caso do span e do sup, caso a font-size do span seja em "em" a do sup tem que ser em rem */
+.preco-item sup {
+  font-size: 1.5rem;
+}
+
+.preco-item ul {
+  max-width: 300px;
+  margin: 20px auto;
+  font-size: 1.25em;
+
+  font-style: italic;
+  color: #7c7c7c;
+}
+
+.preco-item li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+/* esse li::after foi para produzir a bolinha que também é um flex-item  */
+.preco-item li::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #2c70ff;
+  border-radius: 50%;
+}
+
+.preco-item a {
+  max-width: 300px;
+  display: block;
+  margin: 20px auto;
+  border: 4px solid;
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.25em;
+  padding: 15px 0;
+  text-align: center;
+}
+/* Quando chega no mobile, diminuimos os padding laterais, porque a gente não precisa de 60px de padding pra mobile */
+@media (max-width: 800px) {
+  .preco {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* para não precisarmos modificar nosso html, podemos deefinir o nth-child(aqui vai o número do item que queremos mudar a ordem) e depois aplicamos um order a ele */
+  .preco .preco-item:nth-child(3) {
+    order: -2;
+  }
+  .preco .preco-item:nth-child(2) {
+    order: -1;
+  }
+}
+
+/* Qualidade */
+
+.qualidade {
+  max-width: 960px;
+  margin: 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.qualidade-item {
+  /* Lembrar de que não pode extrapolar o valor do max-width */
+  /* da pra fazer com calc tbm, fica; flex: 1 1 calc(33.333% - 20px) mas calc não funcionar no flex-basis */
+  flex: 1 1 300px;
+  /* margin pra cima e pra baixo de 20px e pro lado e pro outro 10px */
+  margin: 20px 10px;
+}
+
+.qualidade-item h2 {
+  font-size: 2.25em;
+  font-style: italic;
+  color: #a4a4a4;
+}
+
+.qualidade-item h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 30px;
+  margin-right: 10px;
+  background: currentColor;
+}
+/* nth-of-type, para fazere com que ele atinja os items que queremos podemos fazer da seguinte forma, a eexpressão, 3n+1 significa que o 1 seja selecionado e depois do 1 eu quero que o 3 item seja selecionado tbm. */
+.qualidade-item:nth-of-type(3n + 1) h2::before {
+  background: #ae81ff;
+}
+.qualidade-item:nth-of-type(3n + 2) h2::before {
+  background: #f9265e;
+}
+.qualidade-item:nth-of-type(3n + 3) h2::before {
+  background: #66d9eb;
+}
+
+.qualidade-item p {
+  font-size: 1.25em;
+  line-height: 1.4;
+  color: #7c7c7c;
+}
+
+/* Newsletter */
+
+/* maceta de pintar a área de ponta a ponta e ainda ter ela dentro do container */
+
+.newsletter {
+  background: #f7f7f7;
+  padding: 60px calc((100% - 960px) / 2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newsletter-info {
+  flex: 1 1 240px;
+  margin: 0 10px;
+}
+
+.newsletter-info h1 {
+  font-size: 3em;
+  color: #a4a4a4;
+}
+
+.newsletter-info p {
+  font-size: 1.25em;
+  font-style: italic;
+  max-width: 230px;
+  color: #7c7c7c;
+  margin-bottom: 10px;
+}
+
+.newsletter-form {
+  flex: 2 1 260px;
+  margin: 0 10px;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 3 1 260px;
+  font-size: 1.25em;
+  color: #7c7c7c;
+  font-style: italic;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  border: 4px solid #2c70ff;
+  background: transparent;
+  padding: 15px 10px;
+  margin: 0px;
+  border-radius: 0px;
+}
+
+.newsletter-form button {
+  flex: 1 1 200px;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  font-size: 2.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #2c70ff;
+  color: whitesmoke;
+  cursor: pointer;
+  margin: 0px;
+  border: 0px;
+  padding: 15px 10px;
+}
+
+@media (max-width: 600px) {
+  .newsletter-form button {
+    font-size: 1.5em;
+  }
+}
+
+/* Footeer */
+
+.footer {
+  display: flex;
+  height: 200px;
+  background: #2c70ff;
+  align-items: center;
+}
+
+.footer p {
+  flex: 1;
+  text-align: center;
+  font-size: 2.25em;
+  color: #122ab2;
+}
